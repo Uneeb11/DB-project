@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<%- include("head" ) -%>
+
+<body>
+ 
+    
+    <%- include("header" ) -%>
+
+     <%#
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    #%>
+
+    <%# Shops Section Begin #%>
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Featured Shops</h2>
+                    </div>
+                    <div class="categories__slider owl-carousel">
+                        <% let i=0; findshops.forEach(function(item){ console.log(item);  %>
+                        <div class="col-lg-3">
+                            <div class="categories__item set-bg" data-setbg="img/shop/Fruit.jpg">
+                                <h5><a href="/nearshop/<%= item.shopid %>"><%= item.name %></a></h5>
+                            </div>
+                        </div>
+                        <% i++ }) %>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <%# Shops Section End #%>
+
+
+     <%# Latest Product Section Begin #%>
+    <section class="latest-product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Top Rated Products</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <% for(let i=0; ;i++) {console.log(products[i]);%>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= products[i].name %></h6>
+                                        <span><%= products[i].price %></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <% if(products[i+1] == null) {break;}%>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/latest-product/lp-1.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6><%= products[i+1].name %></h6>
+                                        <span><%= products[i+1].price %></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%# Latest Product Section End #%>
+
+    <%- include("Footer") -%>
+
+    <%# Js Plugins #%>
+    <%- include("pluginjs") -%>
+
+
+
+</body>
+
+</html>

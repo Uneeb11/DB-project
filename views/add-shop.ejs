@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<%- include("head" ) -%>
+
+<body>
+    
+  <?php include 'header.php'?>
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>ADD SHOPS</h2>
+                        <div class="breadcrumb__option">
+                            <a href="./index.html">Home</a>
+                            <span>Add Shops</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+   <br>
+    <!-- ADD Shop -->
+    <form class="col-md-11" method="POST" action="/addshops">
+        <div class="form-row"> 
+            <div class="form-group col-md-6 ">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">user@example.com</span>
+            </div>
+            </div>
+            <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-row" >
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress"  name="addrress" placeholder="Address">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control" id="inputName"  name="name" placeholder="Name">
+            </div>
+        </div>   
+        <div class="form-row">
+            <div class="form-group col-md-4">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity" name="city">
+            </div>
+            <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <input type="text" class="form-control" id="inputState"  name="state">
+             
+            </div>
+        </div>
+        <input type="hidden" name="userid" value="<%= id.id %>">
+        <button type="submit" class="btn btn-primary" value="submit">ADD</button>
+    </form>
+
+ <br>
+    <?php include 'Footer.php'?>
+
+    <!-- Js Plugins -->
+    <%- include("pluginjs") -%>
+
+</body>
+
+</html>
